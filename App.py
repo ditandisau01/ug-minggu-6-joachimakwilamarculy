@@ -60,5 +60,13 @@ else:
 if (filter != ""):
     if (filterSelectBox == ">"):
         st.table(em.getDataFrame()[em.getDataFrame()[targetFilterColumn] > int(filter)]) # cara filter
+    elif (filterSelectBox == "<"):
+        st.table(em.getDataFrame()[em.getDataFrame()[targetFilterColumn] < int(filter)])
+    elif (filterSelectBox == "="):
+        st.table(em.getDataFrame()[em.getDataFrame()[targetFilterColumn] == int(filter)])
+    elif (filterSelectBox == "<="):
+        st.table(em.getDataFrame()[em.getDataFrame()[targetFilterColumn] <= int(filter)])
+    elif (filterSelectBox == ">="):
+        st.table(em.getDataFrame()[em.getDataFrame()[targetFilterColumn] >= int(filter)])
     # TODO: lanjutkan code di atas
     # note: cara filter ada di modul
